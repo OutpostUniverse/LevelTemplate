@@ -74,7 +74,7 @@ Export void __cdecl GetSaveRegions(BufferDesc& bufferDesc)
 //		 intentionally left empty and is used as the trigger
 //		 callback function for triggers that don't want or need
 //		 any special callback function.
-// Note: The use of SCRIPT_API is used by all trigger functions
+// Note: The use of Export is used by all trigger functions
 //		 to ensure they are exported correctly. (Although, 
 //		 technically it's not needed in this case since this
 //		 function has a function prototype defined in 
