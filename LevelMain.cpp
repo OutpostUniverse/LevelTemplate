@@ -9,10 +9,9 @@
 //		 last export is used to define characteristics of the level.
 //		 See RequiredExports.h for more details.
 //		 ** Be sure to set these when you build your own level**
-
 // Required data exports  (Description, Map, TechTree, GameType, NumPlayers)
 ExportLevelDetails("6 Player, LastOne, '<map name>' map", "on6_01.map", "MULTITEK.TXT", MultiLastOneStanding, 6)
-// or
+// Alternative style:
 // Required data exports  (Description, Map, TechTree, GameType, NumPlayers, maxTechLevel, bUnitOnlyMission)
 //ExportLevelDetailsEx("6 Player, LastOne, '<map name>' map", "on6_01.map", "MULTITEK.TXT", MultiLastOneStanding, 6, 12, false)
 
@@ -28,6 +27,7 @@ struct ScriptGlobal
 ScriptGlobal scriptGlobal;
 
 
+
 // Note: The following function is called once by Outpost2.exe when the
 //		 level is first initialized. This is where you want to create
 //		 all the initial units and structures as well as setup any 
@@ -38,6 +38,7 @@ Export int InitProc()
 	// **TODO**: Add your own code here.
 	return true;	// Level loaded successfully
 }
+
 
 
 // Note: The following function seems to be intended for use in
