@@ -91,12 +91,30 @@ If you do not want to copy you built `.dll` to your game directory, copy out the
 
 #### Changing your VS Code IntelliSense include directories
 
-If you change your `API_DIR` inside of your `Makefile`, you will likely need to change the paths VS Code uses to find code. To change that, open `c_cpp_properties.json` and change the following value:
+If you change your `API_DIR` inside of your `Makefile`, you will likely need to change the paths VS Code uses to find code. To change that, open `.vscode/c_cpp_properties.json` and change the following value:
 
     "includePath": [
         "${workspaceFolder}/../../API/**",
         "${workspaceFolder}/../../**"
     ],
+
+#### Using a different version of Build Tools for Visual Studio
+
+If you already have Visual Studio installed or you have Build Tools for Visual Studio 2015 installed, you do not need to go about installing the 2017 version. To point your project to the version you have, you are going to want to open up your `.vscode/c_cpp_properties.json` file and change the following lines.
+
+    // C++ Standard to use for IntelliSense
+    "cppStandard": "c++17",
+
+    // version of your Windows SDK for VS Code to use for IntelliSense and such
+    // see https://en.wikipedia.org/wiki/Microsoft_Windows_SDK
+    "windowsSdkVersion": "10.0.17134.0",
+
+    // path to your cl.exe
+    "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/VC/Tools/MSVC/14.15.26726/bin/Hostx64/x64/cl.exe",
+
+You will also want to change the following line in your `.vscode/tasks.json` file as well. Set it to the path to your `vcvarsall.bat`.
+
+    "vcvars": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\VC\\Auxiliary\\Build\\vcvarsall.bat\" x86",
 
 ### Launching OP2 / Debugging
 
