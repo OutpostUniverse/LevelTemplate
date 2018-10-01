@@ -1,4 +1,4 @@
-OUTPUT_DLL = ctest.dll
+OUTPUT_DLL = OP2Script.dll
 OUTPUT_BASE_DIR = build
 OUTPUT_DEBUG_DIR = $(OUTPUT_BASE_DIR)\debug
 OUTPUT_RELEASE_DIR = $(OUTPUT_BASE_DIR)\release
@@ -39,7 +39,9 @@ $(OUTPUT_RELEASE_DIR)\$(OUTPUT_DLL): compile_release
 	link.exe /DLL /BASE:0x11000000 /OUT:$(OUTPUT_RELEASE_DIR)\$(OUTPUT_DLL) $(OP2_DLL) $(OUTPUT_RELEASE_DIR)\*.obj
 
 debug: $(OUTPUT_DEBUG_DIR)\$(OUTPUT_DLL)
+	# Comment out below line to not copy DLL to Game directory
 	copy $(OUTPUT_DEBUG_DIR)\$(OUTPUT_DLL) $(GAME_DIR)\$(OUTPUT_DLL)
 
 release: $(OUTPUT_RELEASE_DIR)\$(OUTPUT_DLL)
+	# Comment out below line to not copy DLL to Game directory
 	copy $(OUTPUT_RELEASE_DIR)\$(OUTPUT_DLL) $(GAME_DIR)\$(OUTPUT_DLL)
