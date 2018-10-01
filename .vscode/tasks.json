@@ -1,0 +1,48 @@
+{
+    "version": "2.0.0",
+    "echoCommand": true,
+    "tasks": [
+        {
+            "label": "LevelTemplate: Build Release",
+            "command": "cmd",
+            "type": "process",
+            "args": [
+                "/C %vcvars% && nmake release",
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "LevelTemplate: Build Debug",
+            "command": "cmd",
+            "type": "process",
+            "args": [
+                "/C %vcvars% && nmake debug",
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile",
+        },
+        {
+            "label": "LevelTemplate: Clean",
+            "command": "cmd",
+            "type": "process",
+            "args": [
+                "/C %vcvars% && nmake clean",
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile",
+        }
+    ],
+    "options": {
+        "env": {
+            "vcvars": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\VC\\Auxiliary\\Build\\vcvarsall.bat\" x86",
+        },
+        "cwd": "${workspaceRoot}"
+    }
+}
