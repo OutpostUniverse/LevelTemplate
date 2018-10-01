@@ -3,7 +3,7 @@
 ## Requirements
 
 * Windows (probably Windows 10).... Linux coming soon?
-* [Build Tools for Visual Studio 2017](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017) - 2015 should work as well, but you will need to tweak the `tasks.json` file.
+* [Build Tools for Visual Studio 2017](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017) - 2015 or a full Visual Studio install should work as well. For details checkout the [Using a different version of Build Tools for Visual Studio](#using-a-different-version-of-build-tools-for-visual-studio) section.
 * [VS Code](https://code.visualstudio.com)
 * [C/C++ VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 
