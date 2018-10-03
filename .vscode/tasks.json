@@ -4,39 +4,98 @@
     "tasks": [
         {
             "label": "LevelTemplate: Build Release",
-            "command": "cmd",
             "type": "process",
-            "args": [
-                "/C %vcvars% && nmake release",
-            ],
             "group": "build",
-            "problemMatcher": "$msCompile"
+            "problemMatcher": "$msCompile",
+            "windows": {
+                "command": "cmd",
+                "args": [
+                    "/C %vcvars% && nmake release",
+                ]
+            },
+            "linux": {
+                "command": "${env:OP2_WINEPREFIX}/vsvars.sh",
+                "args": [
+                    "cd ${env:OP2_LEVELS}\\LevelTemplate-Blank-Comments && nmake release"
+                ]
+            }
         },
         {
             "label": "LevelTemplate: Build Debug",
-            "command": "cmd",
             "type": "process",
-            "args": [
-                "/C %vcvars% && nmake debug",
-            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "problemMatcher": "$msCompile",
+            "windows": {
+                "command": "cmd",
+                "args": [
+                    "/C %vcvars% && nmake debug",
+                ]
+            }
+            // Debug does not work using Wine :(
         },
         {
             "label": "LevelTemplate: Clean",
-            "command": "cmd",
             "type": "process",
-            "args": [
-                "/C %vcvars% && nmake clean",
-            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "problemMatcher": "$msCompile",
+            "windows": {
+                "command": "cmd",
+                "args": [
+                    "/C %vcvars% && nmake clean",
+                ]
+            },
+            "linux": {
+                "command": "${env:OP2_WINEPREFIX}/vsvars.sh",
+                "args": [
+                    "cd ${env:OP2_LEVELS}\\LevelTemplate-Blank-Comments && nmake clean"
+                ]
+            }
+        },
+        {
+            "label": "LevelTemplate: Open MSVC Console",
+            "type": "process",
+            "group": "build",
+            "problemMatcher": "$msCompile",
+            "windows": {
+                "command": "cmd",
+                "args": [
+                    "/C %vcvars%",
+                ]
+            },
+            "linux": {
+                "command": "${env:OP2_WINEPREFIX}/vsvars.sh",
+                "args": [
+                    "cmd"
+                ]
+            }
+        },
+        {
+            "label": "LevelTemplate: Launch Outpost 2",
+            "type": "process",
+            "group": "build",
+            "problemMatcher": "$msCompile",
+            "windows": {
+                "command": "${workspaceFolder}/../../Game/Outpost2.exe",
+                "args": []
+            },
+            "linux": {
+                "command": "wine",
+                "args": [
+                    "${workspaceFolder}/../../Game/Outpost2.exe"
+                ],
+                "options": {
+                    "env": {
+                        "WINEPREFIX": "${env:OP2_WINEPREFIX}",
+                        "WINEARCH": "win32"
+                    }
+                }
+            }
         }
     ],
     "options": {
