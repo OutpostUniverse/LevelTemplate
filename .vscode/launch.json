@@ -18,6 +18,7 @@
                 "args": [],
                 "environment": [],
             }
+            // Debug does not work using Wine :(
         }
     ]
 }

@@ -62,7 +62,13 @@
             "type": "process",
             "group": "build",
             "problemMatcher": "$msCompile",
-            // on Windows just run vcvarsall.bat from Integrated terminal
+            "windows": {
+                "command": "cmd",
+                "args": [
+                    "/k",
+                    "%vcvars%"
+                ]
+            },
             "linux": {
                 "command": "${env:OP2_WINEPREFIX}/vsvars.sh",
                 "args": [
