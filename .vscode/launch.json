@@ -13,7 +13,7 @@
             "cwd": "${workspaceFolder}/../../Game",
             "externalConsole": true,
             "windows": {
-                "preLaunchTask": "LevelTemplate: Build Debug",
+                "preLaunchTask": "Build Debug",
                 "program": "${workspaceFolder}/../../Game/Outpost2.exe",
                 "args": [],
                 "environment": [],
