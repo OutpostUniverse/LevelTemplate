@@ -3,7 +3,7 @@
     "echoCommand": true,
     "tasks": [
         {
-            "label": "LevelTemplate: Build Release",
+            "label": "Build Release",
             "type": "process",
             "group": "build",
             "problemMatcher": "$msCompile",
@@ -21,7 +21,7 @@
             }
         },
         {
-            "label": "LevelTemplate: Build Debug",
+            "label": "Build Debug",
             "type": "process",
             "group": {
                 "kind": "build",
@@ -37,7 +37,7 @@
             // Debug does not work using Wine :(
         },
         {
-            "label": "LevelTemplate: Clean",
+            "label": "Clean",
             "type": "process",
             "group": {
                 "kind": "build",
@@ -58,7 +58,7 @@
             }
         },
         {
-            "label": "LevelTemplate: Open MSVC Console",
+            "label": "Open MSVC Console",
             "type": "process",
             "group": "build",
             "problemMatcher": "$msCompile",
@@ -77,7 +77,7 @@
             }
         },
         {
-            "label": "LevelTemplate: Launch Outpost 2",
+            "label": "Launch Outpost 2",
             "type": "process",
             "group": "build",
             "problemMatcher": "$msCompile",

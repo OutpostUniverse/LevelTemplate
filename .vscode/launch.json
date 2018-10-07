@@ -6,7 +6,7 @@
     "configurations": [
 
         {
-            "name": "LevelTemplate: Debug Outpost 2",
+            "name": "Debug Outpost 2",
             "type": "cppvsdbg",
             "request": "launch",
             "stopAtEntry": false,
