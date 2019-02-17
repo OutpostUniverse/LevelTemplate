@@ -53,7 +53,7 @@
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(TargetPath) ..\..\..\..\GameDownload\Outpost2\trunk\</Command>
+      <Command>xcopy /y /d "$(TargetPath)" ".\Outpost2\"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Copying DLL to game folder</Message>
@@ -77,7 +77,7 @@
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(TargetPath) ..\..\..\..\GameDownload\Outpost2\trunk\</Command>
+      <Command>xcopy /y /d "$(TargetPath)" ".\Outpost2\"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Copying DLL to game folder</Message>
