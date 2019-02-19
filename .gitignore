@@ -1,9 +1,9 @@
-Debug
-Release
-Outpost2
+Debug/
+Release/
+Outpost2/
+.vs/
 *.suo
 *.db
 *.opendb
 *.user
-.vs
 *.aps
