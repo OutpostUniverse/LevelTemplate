@@ -1,6 +1,8 @@
-Debug
-Release
+Debug/
+Release/
+.vs/
 *.suo
+*.db
+*.opendb
 *.user
 *.aps
-.vs
