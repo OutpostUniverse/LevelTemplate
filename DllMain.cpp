@@ -10,9 +10,9 @@ BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 		DisableThreadLibraryCalls(hinstDLL);
 	}
 	else if (fdwReason == DLL_PROCESS_DETACH)
-    {
-        HFLCleanup();
-    }
+	{
+		HFLCleanup();
+	}
 
-    return true;
+	return true;
 }
