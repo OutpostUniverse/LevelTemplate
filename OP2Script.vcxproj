@@ -84,9 +84,13 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DllMain.cpp" />
     <ClCompile Include="LevelMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="OP2MissionSDK\HFL\Source\HFL.vcxproj">
+      <Project>{0fc43a25-fb89-4258-849b-cb3c0a061e0d}</Project>
+    </ProjectReference>
     <ProjectReference Include="OP2MissionSDK\OP2Helper\OP2Helper.vcxproj">
       <Project>{0b520c87-4cfd-4a4d-abd4-f87d26df9aad}</Project>
     </ProjectReference>
