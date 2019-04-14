@@ -9,7 +9,7 @@
 //		 See RequiredExports.h for more details.
 //		 ** Be sure to set these when you build your own level**
 // Required data exports  (Description, Map, TechTree, GameType, NumPlayers)
-ExportLevelDetails("6P, LoS, '<map name>'", "on6_01.map", "MULTITEK.TXT", MultiLastOneStanding, 6)
+ExportLevelDetails("Test Colony Game", "cm02.map", "MULTITEK.TXT", MissionTypes::Colony, 1)
 // Alternative style:
 // Required data exports  (Description, Map, TechTree, GameType, NumPlayers, maxTechLevel, bUnitOnlyMission)
 //ExportLevelDetailsEx("6P, LoS, '<map name>'", "on6_01.map", "MULTITEK.TXT", MultiLastOneStanding, 6, 12, false)
