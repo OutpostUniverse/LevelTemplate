@@ -38,7 +38,12 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>ctest</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>ctest</TargetName>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -53,10 +58,10 @@
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y /d "$(TargetPath)" ".\Outpost2\"</Command>
+      <Command>if defined Outpost2Path (xcopy /y /d "$(TargetPath)" "$(Outpost2Path)\") else (echo Outpost2Path environment variable not defined. Skipping Post Build Copy.)</Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Message>Copying DLL to game folder</Message>
+      <Message>Copy mission DLL to game folder</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -77,10 +82,10 @@
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y /d "$(TargetPath)" ".\Outpost2\"</Command>
+      <Command>if defined Outpost2Path (xcopy /y /d "$(TargetPath)" "$(Outpost2Path)\") else (echo Outpost2Path environment variable not defined. Skipping Post Build Copy.)</Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Message>Copying DLL to game folder</Message>
+      <Message>Copy mission DLL to game folder</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
