@@ -55,6 +55,8 @@ Examples:
  * ademo1.dll - Auto-demo number 1
  * CES1.dll - Colony (Eden Starship 1)
 
+![Target Name](VSGeneralTargetName.png "Visual Studio Target Name")
+
 ### Compiling the DLL
 
 Select build or compile from the Visual Studio menu, or use the corresponding toolbar button or hotkey (F5). It should take a moment to compile the code into a DLL file. If there are errors or warnings, they will show up at the bottom. You will need to fix any errors before a DLL is produced. A DLL can still be produced when there are warnings, but there is a good chance the code is wrong, so warnings should be fixed anyway. If you get errors sometimes you'll get lots of cascaded errors. In this case, look at the first one, it may be causing the other errors to be reported in what is otherwise good code. The fastest way to fix errors is usually to search the error message online. Good C++ resources or tutorials may help. [Stackoverflow](https://stackoverflow.com/) typically has lots of good answers. If nothing generic helps, or the problem is hard to search for, it may be best to post a question on [Outpost Universe Forums](https://forum.outpost2.net/). In particular, if you find a bug in the LevelTemplate code, or the MissionSDK, or find documentation is lacking, wrong, or hard to follow, we would love to hear about it. Our efforts are largely dependent on what people ask about.
