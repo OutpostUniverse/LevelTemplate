@@ -8,13 +8,18 @@ install:
 build:
   project: OP2Script.sln
 after_build:
+  # Set version/build tag
   - set Version=Build%APPVEYOR_BUILD_VERSION%
   - if defined APPVEYOR_REPO_TAG_NAME set Version=%APPVEYOR_REPO_TAG_NAME%
+  # Set platform/configuration tag
   - set Config=%CONFIGURATION%
   - if defined PLATFORM set Config=%PLATFORM%-%Config%
+  # Set overall build tag
   - set PackageBaseName="%APPVEYOR_PROJECT_NAME%-%Version%-%Config%"
+  # Determine output folder
   - set OutputFolder=%APPVEYOR_BUILD_FOLDER%\%PLATFORM%\%CONFIGURATION%\
   - if not exist "%OutputFolder%" set OutputFolder=%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\
+  # Package artifacts
   - 7z a "%PackageBaseName%.zip" "%OutputFolder%*.dll"
   - 7z a "%PackageBaseName%-DebugSymbolPdb.zip" "%OutputFolder%*.pdb"
 artifacts:
