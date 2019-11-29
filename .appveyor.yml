@@ -7,6 +7,8 @@ install:
   - git submodule update --init --recursive
 build:
   project: OP2Script.sln
+
+# Config to automatically package build artifacts
 after_build:
   # Set version/build tag
   - set Version=Build%APPVEYOR_BUILD_VERSION%
@@ -26,6 +28,8 @@ after_build:
 artifacts:
   - path: "*.zip"
     name: BuildArtifacts
+
+# Config so tags automatically create GitHub releases and upload build artifacts
 deploy:
   on:
     branch: master
