@@ -35,4 +35,5 @@ deploy:
   description: ''
   provider: GitHub
   auth_token:
+    # GitHub account specific
     secure: TmV7XiO84JvSaLJnbrRrtoOugcFLSogA4I55yBZ1Y+QAmv28EOgO1M8lX+NSJWA/
