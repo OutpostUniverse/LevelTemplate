@@ -1,5 +1,6 @@
-#include <Outpost2DLL/Outpost2DLL.h>	// Main Outpost 2 header to interface with the game
-#include <OP2Helper/OP2Helper.h>		// Optional header to make level building easier
+#include "Outpost2DLL/Outpost2DLL.h" // Main Outpost 2 header to interface with the game
+#include "OP2Helper/OP2Helper.h"     // Optional header to make level building easier
+#include "HFL/Source/HFL.h"
 
 
 // Note: These exports are required by Outpost2.exe from every level
