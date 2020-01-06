@@ -61,5 +61,3 @@ Export void AIProc()
 Export void NoResponseToTrigger()
 {
 }
-
-
