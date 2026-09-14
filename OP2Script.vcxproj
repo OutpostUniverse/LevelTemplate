@@ -93,6 +93,10 @@
     <ClCompile Include="LevelMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="cpp.hint" />
+    <None Include="ReadMe.md" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="OP2MissionSDK\HFL\Source\HFL.vcxproj">
       <Project>{0fc43a25-fb89-4258-849b-cb3c0a061e0d}</Project>
     </ProjectReference>
