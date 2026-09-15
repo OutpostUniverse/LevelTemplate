@@ -1,0 +1,69 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: windows-2025-vs2026
+    # Write permission is required if using the commented out template
+    # below to automatically create releases for tagged versions.
+    #permissions:
+    #  contents: write
+    strategy:
+      matrix:
+        configuration: [Release, Debug]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Equivalent to: git submodule update --init --recursive
+          submodules: recursive
+      - uses: microsoft/setup-msbuild@v3
+      - name: Build
+        run: msbuild OP2Script.sln /p:Configuration=${{ matrix.configuration }}
+
+      # Derived projects may want to auto package build artifacts, and create GitHub
+      # releases for tagged versions.
+      # This is disabled for the LevelTemplate project itself, as it is just a
+      # template project, and so has no binary release packages of its own.
+
+      # # Config to automatically package build artifacts
+      # - name: Determine version
+      #   shell: pwsh
+      #   run: |
+      #     # Set version/build tag
+      #     $Version = "Build${{ github.run_number }}"
+      #     if ($env:GITHUB_REF_TYPE -eq 'tag') { $Version = $env:GITHUB_REF_NAME }
+      #     # Set platform/configuration tag
+      #     # (Add a `platform` axis to the matrix above first if this project ever
+      #     # builds more than one platform, then uncomment the Platform line below)
+      #     $Config = "${{ matrix.configuration }}"
+      #     # $Config = "${{ matrix.platform }}-$Config"
+      #     # Set overall build tag
+      #     $PackageBaseName = "${{ github.event.repository.name }}-$Version-$Config"
+      #     echo "PACKAGE_BASE_NAME=$PackageBaseName" >> $env:GITHUB_ENV
+      #
+      # - name: Package build artifacts
+      #   shell: pwsh
+      #   run: |
+      #     # Determine output folder
+      #     $OutputFolder = "${{ github.workspace }}\${{ matrix.platform }}\${{ matrix.configuration }}\"
+      #     if (-not (Test-Path $OutputFolder)) { $OutputFolder = "${{ github.workspace }}\${{ matrix.configuration }}\" }
+      #     # Package artifacts
+      #     7z a "$env:PACKAGE_BASE_NAME.zip" "$OutputFolder*.exe" "$OutputFolder*.dll"
+      #     # 7z a "$env:PACKAGE_BASE_NAME.zip" "$OutputFolder*.lib"
+      #     7z a "$env:PACKAGE_BASE_NAME-DebugSymbolPdb.zip" "$OutputFolder*.pdb"
+      #
+      # - name: Upload build artifacts
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: BuildArtifacts-${{ matrix.configuration }}
+      #     path: "*.zip"
+      #
+      # # Config so tags automatically create GitHub releases and upload build artifacts
+      # - name: Publish GitHub release
+      #   if: github.ref_type == 'tag' && matrix.configuration == 'Release'
+      #   uses: softprops/action-gh-release@v2
+      #   with:
+      #     files: '*.zip'
+      #     # description: ''
+      #     body: ''
