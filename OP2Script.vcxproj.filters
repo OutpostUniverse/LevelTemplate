@@ -5,6 +5,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="GitHub Actions">
+      <UniqueIdentifier>{9A1D3F2E-4B7C-4E1A-8F0D-2C6B5A9E7D31}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LevelMain.cpp"/>
@@ -13,5 +16,8 @@
   <ItemGroup>
     <None Include="cpp.hint" />
     <None Include="ReadMe.md" />
+    <None Include=".github\workflows\build.yml">
+      <Filter>GitHub Actions</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -8,7 +8,7 @@
 //		 last export is used to define characteristics of the level.
 //		 See RequiredExports.h for more details.
 //		 ** Be sure to set these when you build your own level**
-// Required data exports  (Description, Map, TechTree, GameType, NumPlayers)
+// Required data exports (Description, Map, TechTree, GameType, NumPlayers)
 ExportLevelDetails("Test Colony Game", "cm02.map", "MULTITEK.TXT", MissionTypes::Colony, 1)
 
 // Alternative style allowing more advanced settings such as AI players and max tech level:
@@ -23,6 +23,8 @@ ExportLevelDetails("Test Colony Game", "cm02.map", "MULTITEK.TXT", MissionTypes:
 struct ScriptGlobal
 {
 } scriptGlobal;
+
+
 // This macro automatically generates the GetSaveRegions export which tells Outpost2.exe about
 // the scriptGlobal variable. Data in this struct is preserved during game save/load.
 // Note: This implies all level data must be statically sized.
@@ -46,7 +48,7 @@ Export int InitProc()
 //		 Use it for whatever code needs to run on a continual basis.
 // Note: The standard level DLLs released by Sierra leave this function
 //		 empty and handle all AI controls through triggers.
-Export void AIProc() 
+Export void AIProc()
 {
 }
 
