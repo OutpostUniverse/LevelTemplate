@@ -24,6 +24,8 @@ If you'd like to skip using a Git client, it is possible to download ZIP files f
  * [OP2Helper](https://github.com/OutpostUniverse/OP2Helper)
  * [HFL](https://github.com/OutpostUniverse/HFL)
 
+In addition to the above libraries, TethysAPI is a C++17 library providing access to Outpost 2's public API as well as its internal functions and data, which can be used to create custom missions and mods for the game. The library is not yet fully mature and not included by default in OP2MissionSDK but may be used alongside the traditional OP2MissionSDK without issue. The library can be found here: [TethysAPI](https://github.com/OutpostUniverse/TethysAPI).
+
 ## Usage
 
 Open the main solution file in Visual Studio. Edit the project as desired. Set a DLL name. Compile the source code into a DLL file. Copy the DLL to the game folder. Run the game and test your level.
